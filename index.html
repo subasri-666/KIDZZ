@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>KIDZZ - Learn & Play</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         NAVBAR
+         ===================================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🌈 KIDZZ
+        </div>
+
+        <div class="nav-right">
+
+            <select
+                id="languageSelect"
+                onchange="changeLanguage()">
+
+                <option value="en">
+                    English
+                </option>
+
+                <option value="ta">
+                    தமிழ்
+                </option>
+
+                <option value="hi">
+                    हिंदी
+                </option>
+
+            </select>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================
+         HERO SECTION
+         ===================================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-emoji">
+                🧒🎮
+            </div>
+
+            <h1>
+                Welcome to KIDZZ!
+            </h1>
+
+            <p id="heroText">
+                A Fun World of Games for Kids!
+            </p>
+
+            <p class="hero-description">
+                🎮 Play &nbsp; • &nbsp;
+                🧠 Learn &nbsp; • &nbsp;
+                🏆 Win &nbsp; • &nbsp;
+                😄 Have Fun
+            </p>
+
+            <button
+                class="start-btn"
+                onclick="showGames()">
+
+                🚀 START PLAYING
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         SCORE BAR
+         ===================================== -->
+
+    <section class="score-section">
+
+        <div class="score-box">
+
+            <span>
+                🏆 Total Score
+            </span>
+
+            <strong id="totalScore">
+                0
+            </strong>
+
+        </div>
+
+        <div class="score-box">
+
+            <span>
+                ❤️ Lives
+            </span>
+
+            <strong>
+                3
+            </strong>
+
+        </div>
+
+        <div class="score-box">
+
+            <span>
+                🎮 Games
+            </span>
+
+            <strong>
+                6
+            </strong>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         GAMES SECTION
+         ===================================== -->
+
+    <section
+        class="games-section"
+        id="gamesSection">
+
+
+        <div class="section-heading">
+
+            <h2 id="gamesTitle">
+                Choose Your Game
+            </h2>
+
+            <p id="gamesSubtitle">
+                Play, Learn and Have Fun!
+            </p>
+
+        </div>
+
+
+
+        <!-- GAME CARDS -->
+
+        <div class="games-container">
+
+
+            <!-- MEMORY -->
+
+            <div class="game-card">
+
+                <div class="game-card-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Memory Match
+                </h3>
+
+                <p>
+                    Match the same pictures
+                    and test your memory!
+                </p>
+
+                <div class="game-info">
+                    ⭐ Easy &nbsp; • &nbsp; 🧠 Memory
+                </div>
+
+                <button
+                    onclick="startMemoryGame()">
+
+                    PLAY NOW 🎮
+
+                </button>
+
+            </div>
+
+
+
+            <!-- MATH -->
+
+            <div class="game-card">
+
+                <div class="game-card-icon">
+                    🧮
+                </div>
+
+                <h3>
+                    Math Blast
+                </h3>
+
+                <p>
+                    Solve fun maths questions
+                    before time runs out!
+                </p>
+
+                <div class="game-info">
+                    ⭐ Easy &nbsp; • &nbsp; 🔢 Maths
+                </div>
+
+                <button
+                    onclick="startMathGame()">
+
+                    PLAY NOW 🎮
+
+                </button>
+
+            </div>
+
+
+
+            <!-- COLOR -->
+
+            <div class="game-card">
+
+                <div class="game-card-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Color Rush
+                </h3>
+
+                <p>
+                    Find the correct color
+                    as quickly as possible!
+                </p>
+
+                <div class="game-info">
+                    ⭐ Easy &nbsp; • &nbsp; 🎨 Colors
+                </div>
+
+                <button
+                    onclick="startColorGame()">
+
+                    PLAY NOW 🎮
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ODD ONE OUT -->
+
+            <div class="game-card">
+
+                <div class="game-card-icon">
+                    🧐
+                </div>
+
+                <h3>
+                    Odd One Out
+                </h3>
+
+                <p>
+                    Find the number that
+                    doesn't belong!
+                </p>
+
+                <div class="game-info">
+                    ⭐ Medium &nbsp; • &nbsp; 🔢 Logic
+                </div>
+
+                <button
+                    onclick="startOddGame()">
+
+                    PLAY NOW 🎮
+
+                </button>
+
+            </div>
+
+
+
+            <!-- SAFETY -->
+
+            <div class="game-card">
+
+                <div class="game-card-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Safe or Not?
+                </h3>
+
+                <p>
+                    Learn smart and safe
+                    choices through questions.
+                </p>
+
+                <div class="game-info">
+                    ⭐ Easy &nbsp; • &nbsp; 🛡️ Safety
+                </div>
+
+                <button
+                    onclick="startSafetyGame()">
+
+                    PLAY NOW 🎮
+
+                </button>
+
+            </div>
+
+
+
+            <!-- WORD -->
+
+            <div class="game-card">
+
+                <div class="game-card-icon">
+                    🔤
+                </div>
+
+                <h3>
+                    Word Scramble
+                </h3>
+
+                <p>
+                    Rearrange the letters
+                    and find the hidden word!
+                </p>
+
+                <div class="game-info">
+                    ⭐ Medium &nbsp; • &nbsp; 🔤 Words
+                </div>
+
+                <button
+                    onclick="startWordGame()">
+
+                    PLAY NOW 🎮
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         GAME MODAL
+         ===================================== -->
+
+    <div
+        class="modal"
+        id="gameModal">
+
+
+        <div class="game-modal-content">
+
+
+            <!-- GAME HEADER -->
+
+            <div class="game-header">
+
+                <button
+                    class="close-btn"
+                    onclick="closeGame()">
+
+                    ✕
+
+                </button>
+
+                <div class="game-title-area">
+
+                    <span id="gameEmoji">
+                        🎮
+                    </span>
+
+                    <h2 id="gameTitle">
+                        Game
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GAME STATUS -->
+
+            <div class="game-status">
+
+
+                <div class="status-item">
+
+                    <span>
+                        🏆 Score
+                    </span>
+
+                    <strong id="gameScore">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="status-item">
+
+                    <span>
+                        ❤️ Lives
+                    </span>
+
+                    <strong id="lives">
+                        ❤️❤️❤️
+                    </strong>
+
+                </div>
+
+
+                <div class="status-item">
+
+                    <span>
+                        ⏱️ Time
+                    </span>
+
+                    <strong>
+                        <span id="timer">
+                            30
+                        </span>s
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- GAME CONTENT -->
+
+            <div
+                id="gameArea"
+                class="game-area">
+
+                <h2>
+                    Get Ready! 🎮
+                </h2>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         RESULT MODAL
+         ===================================== -->
+
+    <div
+        class="modal"
+        id="resultModal">
+
+
+        <div class="result-modal-content">
+
+
+            <div class="result-emoji">
+                🏆
+            </div>
+
+
+            <h2 id="resultTitle">
+                Game Over!
+            </h2>
+
+
+            <p>
+                Your Score
+            </p>
+
+
+            <div
+                class="final-score"
+                id="finalScore">
+
+                0
+
+            </div>
+
+
+            <p id="resultText">
+                Great job!
+            </p>
+
+
+            <button
+                class="big-submit-btn"
+                onclick="closeResult()">
+
+                🎮 PLAY AGAIN
+
+            </button>
+
+
+            <button
+                class="back-btn"
+                onclick="closeResult()">
+
+                ← BACK TO GAMES
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         FOOTER
+         ===================================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🌈 KIDZZ
+        </div>
+
+        <p>
+            Learn • Play • Grow • Have Fun!
+        </p>
+
+        <p class="copyright">
+            © 2026 KIDZZ. Made for Kids ❤️
+        </p>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
